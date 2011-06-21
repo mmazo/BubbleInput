@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>Bubble Input - Simple input tokenizer</title>
+	<meta name="keywords" content="bubble input, tokenizer, input tokenizer, input validation, apple mail like input tokenizer, token, token input" />
+  <meta name="description" content="Simple input content tokenizer and validator for input fields and textareas" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/code_examples.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/bubble_input.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/autocomplete.css" />
+</head>
+<body>
+	<h1>Bubble Input</h1>
+	<div class="container">
+	
+  <h2>About</h2>
+  <p>
+    Simple input content tokenizer and validator for input fields and textareas.
+    Bubble input is free to use in any applications and comes under 
+    <a target="_blank" href="http://www.opensource.org/licenses/MIT">MIT</a> license. It is cross-browser compatible and was tested
+    in IE7+, FF, Chrome, Opera and Safari.
+  </p>
+		
+  <p>
+    Mails (comma separated, email validation): <input id="mails" value="test02@test.com, not a mail" />
+  </p>
+  <p>
+    Names (semicolon separated, name validation, with autocompletion): <textarea id="names">misha; Tobias; Not11Name</textarea>
+  </p>
+  <p>
+    Phones (space separated, number validation): <textarea id="phones">98989 342224224 2242222224 not98number</textarea>
+  </p>
+  <p>
+    <button id="mails-export">export mails</button>
+    <button id="names-export">export names</button>
+    <button id="phones-export">export phones</button>
+  </p>
+	
+	<h2>Features</h2>
+	<p>
+		<ul>
+			<li>Converts input fields and textareas into bubble input areas.</li>
+			<li>Adjustable content separation and validation per bubble area.</li>
+			<li>Intuitive input field like content input.</li>
+			<li>Keyboard and Mouse navigation.</li>
+			<li>Immediate content validation and conversion in 'bubbles'</li>
+			<li>Bubbles drag and drop and sorting between and within bubble areas.</li>
+			<li>Content validation after each sorting action.</li>
+			<li>Paste support for content input.</li>
+			<li>Prevents inserting double content.</li>
+			<li>Easy combination with jQuery input-related plugins. Such as autocomplete.</li>
+			<li>Simple styling for all bubble states: valid, invalid, selected, editable.</li>
+			<li>Object oriented design following prototipical inheritance rules.</li>
+		</ul>
+	</p>
+	
+	<h2>Known Issues</h2>
+	<p>
+		<ul>
+			<li>In Opera user needs to press 'enter' to convert pasted content into bubbles. It does not happen automatically as in all other browsers.</li>
+			<li>In IE7 current bubble styling needs to be prettified.</li>
+		</ul>
+	</p>
+		
+	<h2>Download</h2>
+	<p>
+		Latest version (with examples): <a href="data/bubble_input_v1.0.zip">bubble_input_v1.0.zip</a>
+	</p>
+	<p style="display:none;">
+		Or on github: <a href="#">bubble input</a>
+	</p>
+	
+	<h2>Code example (for what you see above)</h2>
+	
+	<div class="code">
+<pre>
+<code>
+&lt;input id="mails" value="test02@test.com, not a mail" /&gt;
+&lt;textarea id="names"&gt;misha; Tobias; Not11Name&lt;/textarea&gt;
+&lt;textarea id="phones"&gt;98989 342224224 2242222224 not98number&lt;/textarea&gt;
+
+var bi1 = new BubbleInput();
+bi1.generate( { targetSelector:  "#mails",
+                separatorRegex:  new RegExp(/,\s*|\r\n|\r|\n/),
+                separatorString: ", ",
+validationRegex: new RegExp(/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/)  } );
+    
+jQuery("#mails-export").click( function(){
+  alert( bi1.exportBubbles() );
+} );
+    
+var bi2 = new BubbleInput();
+bi2.generate( { targetSelector: "#names",
+                separatorRegex:  new RegExp(/;\s*|\r\n|\r|\n/),
+                separatorString: "; ",
+                validationRegex: new RegExp(/^[^\d]+$/)  } );
+
+jQuery("#names-export").click( function(){
+  alert( bi2.exportBubbles() );
+} );
+    
+var availableTags = [
+      "Aaron",
+      "Boris",
+      "Cindirella",
+      "Dorian",
+      "Eragon",
+      "Fritz",
+      "Gloria",
+      "Harald"
+    ];
+jQuery( jQuery('#names').next('.bubble-input').find('.bubble-new .edit') ).autocomplete({
+  source: availableTags,
+  position: { of: jQuery('#names').next('.bubble-input') }
+});
+    
+var bi3 = new BubbleInput();
+bi3.generate( { targetSelector: "#phones",
+                separatorRegex:  new RegExp(/\s\s*|\r\n|\r|\n/),
+                separatorString: " ",
+                validationRegex: new RegExp(/^\d+$/)  } );
+
+jQuery("#phones-export").click( function(){
+  alert( bi3.exportBubbles() );
+} );
+</code>
+</pre>
+	</div>
+	
+	
+	<h2>Contact</h2>
+	<p>Michail Mazo</p>
+	<p>michail.mazo@inovex.de</p>
+	
+	
+	<h2>Other stuff</h2>
+	<p>
+		This wonderful template comes from 
+		<a href="http://www.sohtanaka.com/web-design/styling-pre-tags-with-css-code-block/">Soh Tanaka</a>
+	</p>
+	
+	</div>
+
+  <script type="text/javascript" src="javascripts/jquery-1.6.1.min.js"></script>
+	<script type="text/javascript" src="javascripts/jquery-ui-1.8.10.custom.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.ui.autocomplete.js"></script>
+	<script type="text/javascript" src="javascripts/bubble_input.js"></script>
+	<script type="text/javascript" src="javascripts/infopage.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+  font: 13px normal Verdana, Arial, Helvetica, sans-serif;
+	background-color: #DFDFDD;
+}
+h1 {
+  font: 5em normal Georgia, 'Times New Roman', Times, serif;
+  text-align:center;
+	margin: 10px;
+}
+h1 span { color: #8fc1c7; }
+h1 small{
+  font: 0.2em normal Verdana, Arial, Helvetica, sans-serif;
+  text-transform:uppercase;
+  letter-spacing: 1.5em;
+  display: block;
+  color: #ccc;
+}
+.container {
+  margin: 0 auto;
+  width: 750px;
+}
+pre {
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  background: #F2E496;
+  border: 1px solid #666666;
+  line-height: 20px;
+  width: 750px;
+  overflow: auto;
+  overflow-Y:hidden;
+}
+pre code {
+  margin: 0 0 0 40px;
+  padding: 18px 0;
+  display: block;
+}
+.code {
+  margin: 20px 0;
+}

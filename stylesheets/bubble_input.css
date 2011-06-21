@@ -1,0 +1,79 @@
+/* --- bubble input area --- */
+.bubble-input {
+  background-color: #FFFFFF;
+  border: 1px solid #666666;
+  margin: 0px;
+  padding: 0px;
+  *padding: 10px 0px 10px 0px;
+}
+.bubble-input * {
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+/* --- normal bubble --- */
+.bubble-input .bubble {
+  display: inline-block;
+  *display: inline;
+  list-style: none;
+  margin: 4px;
+  padding: 4px;
+  background-color: #666666;
+  border: 1px solid #666666;
+}
+.bubble-input .bubble .display {
+  color: #FFFFFF;
+  line-height: 19px;
+}
+.bubble-input .bubble .edit {
+  color: #000000;
+  border: 1px solid #666666;
+  display: none;
+}
+.bubble-input .bubble .actions {
+	margin-left: 4px;
+}
+.bubble-input .bubble .delete {
+  color: #FFFFFF;
+}
+
+/* ---- invalid bubble --- */
+.bubble-input .bubble-invalid {
+  background-color: red;
+}
+
+/* --- active bubble input bubble --- */
+.bubble-input .bubble-active {
+  background-color: #4B7ECA;
+}
+
+/* --- editable input bubble --- */
+.bubble-input .bubble-edit {
+  background-color: #4B7ECA;
+}
+
+.bubble-input .bubble-edit .display {
+  display: none;
+}
+.bubble-input .bubble-edit .edit {
+  display: inline;
+}
+
+/* --- new bubble input bubble --- */
+.bubble-input .bubble-new {
+  background-color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+}
+.bubble-input .bubble-new .display {
+  display: none;
+}
+.bubble-input .bubble-new .edit {
+  color: #000000;
+  display: inline;
+  border: none;
+    /* background-color: yellow; */
+}
+.bubble-input .bubble-new .actions {
+  display: none;
+}
