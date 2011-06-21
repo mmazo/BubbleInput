@@ -1,0 +1,27 @@
+About
+
+Simple input content tokenizer and validator for input fields and textareas. Bubble input is free to use in any applications and comes under MIT license. It is cross-browser compatible and was tested in IE7+, FF, Chrome, Opera and Safari.
+
+Idea
+
+The idea of bubble input is not new and that was not me who 'invented' it. That was my colleague and good friend of mine, Marius M. (devilx) who did a first working prototype. Current version is just my own variation on this topic.
+
+Features
+
+Converts input fields and textareas into bubble input areas.
+Adjustable content separation and validation per bubble area.
+Intuitive input field like content input.
+Keyboard and Mouse navigation.
+Immediate content validation and conversion in 'bubbles'
+Bubbles drag and drop and sorting between and within bubble areas.
+Content validation after each sorting action.
+Paste support for content input.
+Prevents inserting double content.
+Easy combination with jQuery input-related plugins. Such as autocomplete.
+Simple styling for all bubble states: valid, invalid, selected, editable.
+Object oriented design following prototipical inheritance rules.
+
+Known Issues
+
+In Opera user needs to press 'enter' to convert pasted content into bubbles. It does not happen automatically as in all other browsers.
+In IE7 current bubble styling needs to be prettified.
